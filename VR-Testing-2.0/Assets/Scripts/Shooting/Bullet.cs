@@ -11,13 +11,13 @@ public class Bullet : MonoBehaviour
     {
     }
 
-    // Update is called once per frame
+    //Shoots the bullet forward (is supposed to at least)
     void Update()
     {
         if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
         {
             projectile.transform.position = Gun.CurrentPosition;
-            GetComponent<Rigidbody>().AddForce(-transform.forward * Time.smoothDeltaTime * speed);
+            GetComponent<Rigidbody>().AddForce(transform.forward * speed);
         }
     }
 }
