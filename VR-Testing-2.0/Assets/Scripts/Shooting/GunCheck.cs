@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class GunCheck : MonoBehaviour
 {
     //Determines if the gun is active or not
@@ -31,3 +31,4 @@ public class GunCheck : MonoBehaviour
         }
     }
 }
+*/

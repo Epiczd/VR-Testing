@@ -18,6 +18,8 @@ public class Gun : MonoBehaviour
     //Starting Position of the gun
     public static Vector3 CurrentPosition;
 
+    [SerializeField] protected OVRGrabbable gunOVR;
+
     //OnStart, the bullet is disabled
     void Start()
     {
@@ -29,6 +31,11 @@ public class Gun : MonoBehaviour
      */
     void Update()
     {
+        if (gunOVR.isGrabbed)
+        {
+            bullet.SetActive(true);
+        }
+
         CurrentPosition = this.transform.position;
         if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
         {
@@ -36,6 +43,7 @@ public class Gun : MonoBehaviour
             gun.Play();
         }
 
+        /*
         if(GunCheck.gunActive == true)
         {
             bullet.SetActive(true);
@@ -44,6 +52,7 @@ public class Gun : MonoBehaviour
         {
             bullet.SetActive(false);
         }
+        */
 
         if(gunFired == true)
         {
