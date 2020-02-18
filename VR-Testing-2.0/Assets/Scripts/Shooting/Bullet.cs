@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
         {
             projectile.transform.position = Gun.CurrentPosition;
-            GetComponent<Rigidbody>().AddForce(transform.eulerAngles * speed);
+            GetComponent<Rigidbody>().AddForce(transform.eulerAngles * Time.smoothDeltaTime * speed);
 
         }
     }
