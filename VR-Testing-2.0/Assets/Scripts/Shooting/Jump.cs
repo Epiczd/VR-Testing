@@ -15,7 +15,7 @@ public class Jump : MonoBehaviour
     //If the player presses the A button, they jump.
     void Jumped()
     {
-        if (OVRInput.Get(OVRInput.Button.One))
+        if (OVRInput.GetDown(OVRInput.Button.One))
         {
             gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, 8f, 0f), ForceMode.Impulse);
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public Rigidbody projectile;
+    public GameObject projectile;
     private float speed = 25f;
     public OVRGrabbable gun;
 
@@ -17,19 +17,34 @@ public class Bullet : MonoBehaviour
     //Shoots the bullet forward (is supposed to at least)
     void Update()
     {
+        Fired();
+        /*
         if (gun.isGrabbed && OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
         {
             projectile.transform.position = Gun.CurrentPosition;
 
-            if(currentGunPosition.transform.position == gun.grabbedTransform.forward)
+            // equals forward
+            if(Gun.CurrentPosition == transform.forward)
             {
                 GetComponent<Rigidbody>().velocity = projectile.transform.forward * speed;
             }
-            else if(currentGunPosition.transform.position == gun.grabbedTransform.right)
+            else if(Gun.CurrentPosition == transform.right)
             {
                 GetComponent<Rigidbody>().velocity = projectile.transform.right * speed;
             }
 
+        }
+        */
+    }
+
+    void Fired()
+    {
+        while(gun.isGrabbed && OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
+        {
+            GameObject instBullet = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
+            Rigidbody instBulletRigidBody = instBullet.GetComponent<Rigidbody>();
+            instBulletRigidBody.AddForce(Vector3.forward * speed);
+            break;
         }
     }
 }
