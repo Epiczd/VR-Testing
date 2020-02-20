@@ -13,7 +13,7 @@ public class DestroyObject : MonoBehaviour
     //If the object is shot, it will be destroyed, and particles will emit from the former object
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Bullet")
+        if(collision.collider.tag == "Bullet" || collision.collider.tag == "Katana")
         {
             //Destroys the object
             Destroy(DestructableObject);
