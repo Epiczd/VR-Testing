@@ -10,7 +10,7 @@ public class DestroyObject : MonoBehaviour
     //Particles of the destroyed object
     [SerializeField] private GameObject[] particles;
 
-    //If the object is shot, it will be destroyed, and particles will emit from the former object
+    //If the object is shot, or hit with a katana it will be destroyed, and particles will emit from the former object
     void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.tag == "Bullet" || collision.collider.tag == "Katana")
