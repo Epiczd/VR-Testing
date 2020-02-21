@@ -12,9 +12,6 @@ public class Gun : MonoBehaviour
     //The Bullet being fired
     public GameObject bullet;
 
-    //The Sound Effect of the gun
-    public AudioSource gun;
-
     //Starting Position of the gun
     public static Vector3 CurrentPosition;
 
@@ -37,38 +34,5 @@ public class Gun : MonoBehaviour
         }
 
         CurrentPosition = this.transform.position;
-        if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
-        {
-            gunFired = true;
-            gun.Play();
-        }
-
-        /*
-        if(GunCheck.gunActive == true)
-        {
-            bullet.SetActive(true);
-        }
-        else
-        {
-            bullet.SetActive(false);
-        }
-        */
-
-        if(gunFired == true)
-        {
-            /*
-            UpdateMovement();
-            */
-            Debug.Log("Fired");
-        }
     }
-
-    /*
-    // When the player fires the gun, this moves the bullet forward
-    void UpdateMovement()
-    {
-        Vector3 MovementDirection = Vector3.forward;
-        bullet.transform.Translate(MovementDirection * Time.deltaTime);
-    }
-    */
 }

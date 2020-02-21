@@ -5743,7 +5743,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 544441101}
-  gun: {fileID: 499989016}
   gunOVR: {fileID: 499989007}
 --- !u!82 &499989016
 AudioSource:
@@ -5868,6 +5867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 544441101}
   gun: {fileID: 499989007}
+  gunShot: {fileID: 499989016}
   currentGunPosition: {fileID: 499989012}
 --- !u!1 &505271283
 GameObject:
@@ -5896,7 +5896,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5bff0a1410092f44d8ae4d58185e4df8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f2e7afae3b1d88947aa013183bb41455, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -6149,6 +6149,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1368164020}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &594117137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594117129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0285417891db4095865723263ab99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &788824354
 GameObject:
   m_ObjectHideFlags: 0
@@ -16414,7 +16426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.13
+      value: 0.118
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.z
