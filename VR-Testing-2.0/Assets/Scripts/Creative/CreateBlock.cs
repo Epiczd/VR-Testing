@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class CreateBlock : MonoBehaviour
 {
     //Activates the block menu
-    [SerializeField] private Canvas blockMenu;
+    [SerializeField] private GameObject blockMenu;
 
     //On Start, the block menu is disabled
     void Start()
     {
-        blockMenu.enabled = false;
+        blockMenu.SetActive(false);
     }
 
     //If the player presses B, they will open the block menu
@@ -19,7 +19,7 @@ public class CreateBlock : MonoBehaviour
     {
         if (OVRInput.GetDown(OVRInput.RawButton.B))
         {
-            blockMenu.enabled = true;
+            blockMenu.SetActive(true);
         }
     }
 }
