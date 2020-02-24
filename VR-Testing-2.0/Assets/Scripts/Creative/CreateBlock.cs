@@ -5,21 +5,35 @@ using UnityEngine.UI;
 
 public class CreateBlock : MonoBehaviour
 {
-    //Activates the block menu
-    [SerializeField] private GameObject blockMenu;
+    //Blocks created by the player
+    [SerializeField] private GameObject block;
 
-    //On Start, the block menu is disabled
+    [SerializeField] private Button createButton;
+
+    //OnStart, the block is disabled
     void Start()
     {
-        blockMenu.SetActive(false);
+        block.SetActive(false);
+        createButton.onClick.AddListener(OnClick);
     }
 
-    //If the player presses B, they will open the block menu
-    void Update()
+    /* When the player clicks the create block button,
+     * it will ask how many blocks they want to create (future feature).
+     * The game will then instantiate the amount of blocks requested from the player
+     */
+    public void Update(float numOfBlocks)
     {
-        if (OVRInput.GetDown(OVRInput.RawButton.B))
+        OnClick();
+        for (int i = 0; i < numOfBlocks; i++)
         {
-            blockMenu.SetActive(true);
+            GameObject blockCreate = Instantiate(block, transform.position, Quaternion.identity) as GameObject;
+            i++;
         }
+    }
+
+    //When the button is clicked, it sets the block active
+    void OnClick()
+    {
+        block.SetActive(true);
     }
 }

@@ -58,9 +58,10 @@ public class LaserPointer : OVRCursor
         lineRenderer = GetComponent<LineRenderer>();
     }
 
+    //false by default
     private void Start()
     {
-        if (cursorVisual) cursorVisual.SetActive(false);
+        if (cursorVisual) cursorVisual.SetActive(true);
     }
 
     public override void SetCursorStartDest(Vector3 start, Vector3 dest, Vector3 normal)
